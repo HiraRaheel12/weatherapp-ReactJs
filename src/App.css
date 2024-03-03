@@ -1,38 +1,149 @@
-.App {
-  text-align: center;
+.App > img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.background {
+  height: 100vh;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  z-index: 1;
+}
+
+.box {
+  position: relative;
+  max-width: 350px;
+  height: 520px;
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(257,257,257,0.7); 
+  backdrop-filter: blur(15px);
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.search{
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search > input {
+  background-color: transparent;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(257,257,257,0.7);
+  border-radius: 50px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.search > input::placeholder{
+  color: rgba(257,257,257,0.7);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search > input:focus{
+  outline: none
+}
+
+.search > i {
+  color: rgba(257,257,257,0.7);
+  margin-left: -28px;
+}
+
+.search > i:hover{
+  color: white;
+  transition: all 0.5s;
+}
+
+.temperature{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.temperature > img{
+  width: 200px;
+  height: auto;
+}
+
+.temperature > h1{
+  color: white;
+  margin-top: -5px;
+  font-size: 55px;
+}
+
+.temperature > p{
+  margin-top: -35px;
+  color: white;
+  font-size: 25px;
+}
+
+.first-row,  .second-row{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 25px;
+  border-bottom: 1px solid rgba(257,257,257,0.7);
+  margin-top: -28px;
+  margin-bottom: 25px;
+}
+
+.sunrise, 
+.sunset, 
+.air,
+.humidity, 
+.precipitation, 
+.pressure{
+  display: flex;
+  align-items: center;
+}
+
+.sunrise > img,
+.sunset > img{
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.air > img ,
+.humidity > img ,
+.precipitation > img ,
+.pressure > img{
+  width: 25px;
+  height: 25px;
+  margin-top: 10px;
+}
+
+.sunriseTime > h6,
+.sunsetTime > h6,
+.airQuality > h6,
+.humidityPer > h6 ,
+.precipitationPer > h6,
+.pressureValue > h6 {
+  color: white;
+  font-weight: 400;
+}
+
+.sunriseTime > p,
+.sunsetTime > p ,
+.airQuality > p,
+.humidityPer > p ,
+.precipitationPer > p,
+.pressureValue > p {
+  color: white;
+  margin-top: -25px;
+  font-size: 12px;
+  font-weight: 500;
 }
